@@ -34,12 +34,10 @@ public class Sorts{
     int len = data.length;
     for (int i = 1; i < len; i++){
       int switching = data[i];
-      int j = i - 1;  //i is ahead of j by one
-      while (j >= 0 && data[j] > switching){
+      for (int j = i - 1; j >= 0 && data[j] > switching; j--){
         data[j + 1] = data[j];  //switch elements
-        j--;  //
+        data[j] = switching;
       }
-      data[j + 1] = switching;
     }
   }
 }
