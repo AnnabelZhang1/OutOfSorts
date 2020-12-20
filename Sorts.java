@@ -18,21 +18,30 @@ public class Sorts{
   public static void selectionSort(int[] data){
     int len = data.length;
     for (int i = 0; i < len-1; i++){
-      int min = i;
+      int min = i; //index of min
       for (int j = i + 1; j < len; j++){
         if (data[j] < data[min])
           min = j;
       }
-      int temp = data[min]; //temp = 2
-      data[min] = data[i]; // 2 = 1
-      data[i] = temp; //1 = 2
+      int temp = data[min];
+      data[min] = data[i];
+      data[i] = temp;
     }
   }
 
-/*Insertion Sort
+//Insertion Sort
   public static void insertionSort(int[] data){
-
-  }*/
+    int len = data.length;
+    for (int i = 1; i < len; i++){
+      int switching = data[i];
+      int j = i - 1;  //i is ahead of j by one
+      while (j >= 0 && data[j] > switching){
+        data[j + 1] = data[j];  //switch elements
+        j--;  //
+      }
+      data[j + 1] = switching;
+    }
+  }
 }
 
 // time java Driver 4000 bubble
