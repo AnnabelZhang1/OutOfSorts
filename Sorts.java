@@ -1,8 +1,6 @@
 public class Sorts{
-  /**Bubble sort of an int array.
-  *@postcondition The array will be modified such that the elements will be in increasing order.
-  *@param data  the elements to be sorted.
-  */
+
+//Bubble Sort
   public static void bubbleSort(int[] data){
     int len = data.length;
     for (int i = 0; i < len-1; i++){
@@ -15,10 +13,26 @@ public class Sorts{
       }
     }
   }
+
+//Selection Sort
+  public static void selectionSort(int[] data){
+    int len = data.length;
+    for (int i = 0; i < len-1; i++){
+      int min = i;
+      for (int j = i + 1; j < len; j++){
+        if (data[j] < data[min])
+          min = j;
+      }
+      int temp = data[min]; //temp = 2
+      data[min] = data[i]; // 2 = 1
+      data[i] = temp; //1 = 2
+    }
+  }
+
+/*Insertion Sort
+  public static void insertionSort(int[] data){
+
+  }*/
 }
 
-/*
-check if int at index is less than index at i+1
-yes do nothing
-no, swap
-*/
+// time java Driver 4000 bubble
