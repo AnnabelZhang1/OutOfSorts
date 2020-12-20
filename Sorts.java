@@ -32,11 +32,11 @@ public class Sorts{
 //Insertion Sort
   public static void insertionSort(int[] data){
     int len = data.length;
-    for (int i = 1; i < len; i++){
-      int switching = data[i];
-      for (int j = i - 1; j >= 0 && data[j] > switching; j--){
-        data[j + 1] = data[j];  //switch elements
-        data[j] = switching;
+    for (int i = 1; i < len; i++){//data[1] = 5 data[0j] = 10
+      int switching = data[i]; //switching = 5
+      for (int j = i - 1; j >= 0 && data[j] > switching; j--){ //j = 0
+        data[j + 1] = data[j];  //switch elements  data[1] = override(10)
+        data[j] = switching;  //data[0j] = 5
       }
     }
   }
